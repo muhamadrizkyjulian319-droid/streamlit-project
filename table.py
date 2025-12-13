@@ -10,4 +10,4 @@ def table():
     })
     df.index = df.index + 1
     st.dataframe(df)
-    # st.dataframe(df, hide_index=True) kalo mau ga pake nomor
+    # st.dataframe(df, hide_index=True) kalo ga mau pake nomor

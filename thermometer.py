@@ -9,6 +9,8 @@ with st.sidebar:
         icons=["thermometer",  "table", "person", "building"], menu_icon="cast", default_index=0)
     selected
 
+# menu = st.sidebar.selectbox("Menu", ["Konversi Suhu", "Batasan Normal Suhu", "Suhu Tubuh", "Suhu Ruang"])
+
 if selected == "Konversi Suhu":
     st.title("Konversi Suhu")
     st.write("Aplikasi konversi suhu sederhana.")
