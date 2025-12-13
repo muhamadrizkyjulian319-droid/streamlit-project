@@ -55,3 +55,6 @@ elif selected == "Batasan Normal Suhu":
 elif selected == "Suhu Tubuh":
     person()
 
+elif selected == "Suhu Ruang":
+    room()
+
