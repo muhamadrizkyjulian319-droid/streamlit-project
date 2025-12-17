@@ -21,6 +21,8 @@ def person():
     if st.button("Cek Suhu Tubuh"):
         suhu = konversi_suhu(nilai, satuan)
 
+        st.write(f"Suhu tubuh kamu: **{suhu:.2f} °C**")
+
         if 36.5 <= suhu <= 37.5:
             st.success("✅ Suhu tubuh normal")
         elif suhu > 37.5:

@@ -1,15 +1,15 @@
 import streamlit as st, math
-from streamlit_option_menu import option_menu
-from table import table
+# from streamlit_option_menu import option_menu
+from info import info
 from person import person
 from room import room
 
-with st.sidebar:
-    selected = option_menu("Menu", ["Konversi Suhu", "Batasan Normal Suhu", "Suhu Tubuh", "Suhu Ruang"], 
-        icons=["thermometer",  "table", "person", "building"], menu_icon="cast", default_index=0)
-    selected
+# with st.sidebar:
+#     selected = option_menu("Menu", ["Konversi Suhu", "Batasan Normal Suhu", "Suhu Tubuh", "Suhu Ruang"], 
+#         icons=["thermometer",  "table", "person", "building"], menu_icon="cast", default_index=0)
+#     selected
 
-# menu = st.sidebar.selectbox("Menu", ["Konversi Suhu", "Batasan Normal Suhu", "Suhu Tubuh", "Suhu Ruang"])
+selected = st.sidebar.selectbox("Menu", ["Konversi Suhu", "Informasi Terkait Suhu", "Suhu Tubuh", "Suhu Ruang"])
 
 if selected == "Konversi Suhu":
     st.title("Konversi Suhu")
@@ -49,8 +49,8 @@ if selected == "Konversi Suhu":
         hasil = konversi_suhu(nilai, dari, ke)
         st.success(f"Maka, hasil konversi dari {dari} ke {ke} adalah {hasil}")
 
-elif selected == "Batasan Normal Suhu":
-    table()
+elif selected == "Informasi Terkait Suhu":
+    info()
 
 elif selected == "Suhu Tubuh":
     person()
