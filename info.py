@@ -1,7 +1,7 @@
 import streamlit as st, pandas as pd
 
 def info():
-    tab1, tab2, tab3 = st.tabs(["Apa Itu Suhu Ruang?", "Apa Itu Suhu Tubuh", "Batasan Normal Suhu"])
+    tab1, tab2, tab3 = st.tabs(["Apa Itu Suhu Ruang?", "Apa Itu Suhu Tubuh", " Tabel Batasan Normal Suhu"])
         
     with tab1:
         st.title("Apa Itu Suhu Ruang?")
@@ -25,7 +25,7 @@ def info():
             st.write(f"- {i}")
 
     with tab3:
-        st.title("Batasan Normal Suhu")
+        st.title("Tabel Batasan Normal Suhu")
         st.write("Tabel batasan normal suhu.")
         df = pd.DataFrame({
             "Satuan Suhu": ["Celcius", "Fahrenheit", "Kelvin", "Reamur"],
