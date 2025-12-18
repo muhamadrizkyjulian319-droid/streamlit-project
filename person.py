@@ -1,7 +1,7 @@
 import streamlit as st
 
 def person():
-    st.title("Cek Suhu Tubuh")
+    st.title("🥶Cek Suhu Tubuh🥵")
     st.write("Coba cek kamu demam atau hipotermia:P")
 
     nilai = st.number_input("Masukkan suhu tubuh: ")

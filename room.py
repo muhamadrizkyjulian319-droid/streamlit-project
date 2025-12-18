@@ -1,7 +1,7 @@
 import streamlit as st
 
 def room():
-    st.title("Rata-rata Suhu Ruangan Harian")
+    st.title("🏠Rata-rata Suhu Ruangan Harian")
     st.write("Coba cek suhu ruanganmu, kamu lagi di surga😍 atau di neraka🔥:P")
     
     def konversi_suhu(val, unit):

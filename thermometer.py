@@ -9,10 +9,13 @@ from room import room
 #         icons=["thermometer",  "table", "person", "building"], menu_icon="cast", default_index=0)
 #     selected
 
-selected = st.sidebar.selectbox("Menu", ["Konversi Suhu", "Informasi Terkait Suhu", "Suhu Tubuh", "Suhu Ruang"])
+st.set_page_config(page_icon="🌡️")
 
-if selected == "Konversi Suhu":
-    st.title("Konversi Suhu")
+st.sidebar.title("🏠Main Menu")
+selected = st.sidebar.selectbox("Pilih salah satu menu di bawah ini...", ["🌡️Konversi Suhu", "📝Informasi Terkait Suhu", "🥶Suhu Tubuh🥵", "🏠Suhu Ruang"])
+
+if selected == "🌡️Konversi Suhu":
+    st.title("🌡️Konversi Suhu")
     st.write("Aplikasi konversi suhu sederhana.")
 
     # Input nilai suhu
@@ -49,12 +52,12 @@ if selected == "Konversi Suhu":
         hasil = konversi_suhu(nilai, dari, ke)
         st.success(f"Maka, hasil konversi dari {dari} ke {ke} adalah {hasil}")
 
-elif selected == "Informasi Terkait Suhu":
+elif selected == "📝Informasi Terkait Suhu":
     info()
 
-elif selected == "Suhu Tubuh":
+elif selected == "🥶Suhu Tubuh🥵":
     person()
 
-elif selected == "Suhu Ruang":
+elif selected == "🏠Suhu Ruang":
     room()
 
