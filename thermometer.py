@@ -9,7 +9,7 @@ from room import room
 #         icons=["thermometer",  "table", "person", "building"], menu_icon="cast", default_index=0)
 #     selected
 
-st.set_page_config(page_icon="🌡️")
+st.set_page_config(page_icon="🌡️Konversi Suhu Sederhana", page_title="🌡️Konversi Suhu Sederhana", layout="centered")
 
 st.sidebar.title("🏠Main Menu")
 selected = st.sidebar.selectbox("Pilih salah satu menu di bawah ini...", ["🌡️Konversi Suhu", "📝Informasi Terkait Suhu", "🥶Suhu Tubuh🥵", "🏠Suhu Ruang"])

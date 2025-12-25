@@ -37,10 +37,6 @@ def info():
         # st.dataframe(df, hide_index=True) kalo ga mau pake nomor
 
     with tab4:
-        st.set_page_config(
-            page_title = "⛅Suhu Cuaca",
-            layout = "centered"
-        )
 
         st.markdown("""
             <style>  
