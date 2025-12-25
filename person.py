@@ -1,33 +1,37 @@
 import streamlit as st
 
 def person():
-    st.title("🥶Cek Suhu Tubuh🥵")
-    st.write("Coba cek kamu demam atau hipotermia:P")
 
-    nilai = st.number_input("Masukkan suhu tubuh: ")
-    satuan = st.selectbox("Pilih satuan suhu: ", ["Celcius", "Fahrenheit", "Kelvin", "Reamur"])
-
-    # Konversi ke Celcius
+    st.markdown("<h1 style='text-align: center;'>🥶 Cek Suhu Tubuh 🥵</h1>", unsafe_allow_html=True)
+    
     def konversi_suhu(val, unit):
-        if unit == "Celcius":
-            return val
-        elif unit == "Fahrenheit":
-            return (val - 32) * 5/9
-        elif unit == "Kelvin":
-            return val - 273.15
-        elif unit == "Reamur":
-            return val * 5/4
+        if unit == "Celcius": return val
+        elif unit == "Fahrenheit": return (val - 32) * 5/9
+        elif unit == "Kelvin": return val - 273.15
+        elif unit == "Reamur": return val * 5/4
 
-    if st.button("Cek Suhu Tubuh"):
-        suhu = konversi_suhu(nilai, satuan)
+    col1, col2 = st.columns([1, 1])
+    
+    with col1:
+        st.subheader("📝 Input Data")
+        nilai = st.number_input("Masukkan suhu tubuh:", min_value=0.0, step=0.1)
+        satuan = st.selectbox("Pilih satuan suhu:", ["Celcius", "Fahrenheit", "Kelvin", "Reamur"])
+        btn_cek = st.button("ANALISIS SEKARANG")
 
-        st.write(f"Suhu tubuh kamu: **{suhu:.2f} °C**")
+    with col2:
+        if btn_cek:
+            suhu = konversi_suhu(nilai, satuan)
 
-        if 36.5 <= suhu <= 37.5:
-            st.success("✅ Suhu tubuh normal")
-        elif suhu > 37.5:
-            st.warning("⚠️ Suhu tubuh di atas batasan normal. KAMU DEMAM!")
-        elif suhu < 36.5:
-            st.warning("⚠️ Suhu tubuh di bawah batasan normal. KAMU HIPOTERMIA!")
+            st.markdown(f"<h2 style='text-align:center;'>Hasil: {suhu:.2f} °C</h2>", unsafe_allow_html=True)
+            
+            if 36.5 <= suhu <= 37.5:
+                st.success("✅ Kondisi: Normal")
+                st.write("Tubuh Anda sehat. Pertahankan gaya hidup seimbang!")
+            elif suhu > 37.5:
+                st.error("⚠️ Kondisi: DEMAM")
+                st.write("Suhu tubuh tinggi. Istirahatlah dan minum banyak cairan.")
+            else:
+                st.warning("⚠️ Kondisi: HIPOTERMIA")
+                st.write("Suhu terlalu rendah. Gunakan pakaian tebal dan segera cari kehangatan.")
         else:
-            st.warning("⚠️ Suhu tubuh di atas batasan normal. KAMU HIPOTERMIA!")
+            st.info("Silakan masukkan suhu dan tekan tombol analisis untuk melihat hasil.")
