@@ -16,7 +16,7 @@ def person():
         st.subheader("📝 Input Data")
         nilai = st.number_input("Masukkan suhu tubuh:", min_value=0.0, step=0.1)
         satuan = st.selectbox("Pilih satuan suhu:", ["Celcius", "Fahrenheit", "Kelvin", "Reamur"])
-        btn_cek = st.button("ANALISIS SEKARANG")
+        btn_cek = st.button("Analisis Sekarang")
 
     with col2:
         if btn_cek:
